@@ -1,4 +1,4 @@
-//budget
+//budget.tf
 budget = {
     name = ""
     limit-amount = ""
