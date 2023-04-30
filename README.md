@@ -20,7 +20,7 @@ The goals for this repository are:
 4. Keep in-line with IAC methodologies.
 
 ## Install
-This project uses [Terraform](https://www.terraform.io/). You'll need to install Terraform to run this code, once Terraform is installed:
+This project uses [Terraform](https://www.terraform.io/). You'll need to install Terraform along with [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html) to run this code. Once these are installed:
 - Clone the repo:
 ```sh
 $ git clone https://github.com/tekore/Aws
