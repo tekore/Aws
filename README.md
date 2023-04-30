@@ -20,10 +20,10 @@ The goals for this repository are:
 4. Keep in-line with IAC methodologies.
 
 ## Install
-This project uses [Terraform](https://www.terraform.io/). You'll need to install Terraform to run this code, once Terraform in installed;
+This project uses [Terraform](https://www.terraform.io/). You'll need to install Terraform to run this code, once Terraform is installed:
 - Clone the repo:
 ```sh
-$ git clone https://github.com/tekore/AWS
+$ git clone https://github.com/tekore/Aws
 ```
 
 - Initialise Terraform
@@ -41,7 +41,7 @@ $ terraform apply --var-file="template.tfvars"
 ```
 
 ## Issues
-- If there is no availabilty for the selected zone the terraform build will fail instead of using an available instance. This will be included in a future push.
+- If there is no availabilty for the selected zone the terraform build will fail instead of using an available instance. Functionality for terraform to use only available instances will be included in a future push.
 
 ## Maintainers
 [@Tekore](https://github.com/tekore)
