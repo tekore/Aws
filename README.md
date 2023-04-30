@@ -6,10 +6,10 @@ Automation of AWS infrastructure.
 
 ## Table of Contents
 - [Goals](#Goals)
-- [Install](#install)
-- [Usage](#usage)
+- [Install](#Install)
+- [Usage](#Usage)
 - [Issues](#Issues)
-- [Maintainers](#maintainers)
+- [Maintainers](#Maintainers)
 
 ## Goals
 The goals for this repository are:
@@ -34,7 +34,7 @@ $ terraform init
 ## Usage
 The provided .tfvars template "[tfvars-template](https://github.com/tekore/Aws/blob/main/tfvars-template "tfvars-template")" will need to be updated with the relevant variables needed for your install.  
 
-Once this is done, run;
+Once this is done, run:
 ```sh
 $ terraform plan --var-file="template.tfvars"
 $ terraform apply --var-file="template.tfvars"
