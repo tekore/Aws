@@ -10,7 +10,7 @@
 crash.log
 
 # .tfvars files
-#*.tfvars
+*.tfvars
 
 # Override files
 override.tf
