@@ -2,13 +2,13 @@
 budget = {
     name = ""
     limit-amount = ""
-    limit-unit = ""
+    limit-unit   = ""
     period-start = ""
-    period-end = ""
-    time-unit = ""
-    cost-filter = ""
-    threshold = 
-    email = ""
+    period-end   = ""
+    time-unit    = ""
+    cost-filter  = ""
+    threshold    = ""
+    email        = ""
 }
 
 //cloud-vms.tf
@@ -24,16 +24,15 @@ tags = {
   store = ""
 }
 
-ami = {
-  ubuntu2004 = ""
-  ubuntu2204 = ""
+ami-ubuntu = {
+    owner  = ""
+    ubuntu = ""
 }
 
 aws-network = {
   subnetwork = ""
   network    = ""
 }
-
 
 sg-protocol = {
   wiki  = ""
@@ -55,7 +54,6 @@ project = {
   access_key = ""
   secret_key = ""
 }
-
 
 //networking.tf
 networking = {

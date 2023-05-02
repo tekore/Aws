@@ -32,11 +32,11 @@ variable "tags" {
   }
 }
 
-variable "ami" {
+variable "ami-ubuntu" {
   type = map(string)
   default = {
-    ubuntu2004 = "ami-073ee45c9f61cbaa3"
-    ubuntu2204 = "ami-0f540e9f488cfa27d"
+    owner = "099720109477"
+    ubuntu = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"
   }
 }
 

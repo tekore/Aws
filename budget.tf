@@ -15,6 +15,6 @@ resource "aws_budgets_budget" "ec2" {
     threshold                  = 100
     threshold_type             = "PERCENTAGE"
     notification_type          = "FORECASTED"
-    subscriber_email_addresses = ["var.budget.email"]
+    subscriber_email_addresses = [var.budget.email]
   }
 }
