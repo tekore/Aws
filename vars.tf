@@ -1,4 +1,4 @@
-//budget
+//budget.tf
 variable "budget" {
   type = map(string)
   default = {
