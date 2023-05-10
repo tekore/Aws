@@ -26,7 +26,7 @@ pipeline {
     }
     stage('Set AWS Credentials') {
       steps {
-        sh 'source /var/lib/jenkins/Scripts/set-Aws-creds.sh'
+        sh '. /var/lib/jenkins/Scripts/set-Aws-creds.sh'
       }
     }
     stage('Run the Terraform build') {
