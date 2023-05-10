@@ -106,3 +106,19 @@ variable "static-ips" {
     store = "10.57.1.20"
   }
 }
+
+//iam.tf
+variable "iam-storage" {
+  type = map(string)
+  default = {
+    user-name = "suser"
+    policy-name = "s-policy"
+    policy-action = "S3:*"
+  }
+}
+
+
+
+//route53.tf
+
+
