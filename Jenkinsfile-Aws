@@ -1,0 +1,40 @@
+pipeline {
+  agent any
+  options {
+    skipDefaultCheckout(true)
+  }
+  stages {
+    stage('Clean workspace') {
+      steps {
+        cleanWs()
+      }
+    }
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('Download the current Terraform state') {
+      steps {
+        sh '/var/lib/jenkins/Scripts/get-Aws-tfstate.sh'
+      }
+    }
+    stage('Validate the Terraform code') {
+      steps {
+        sh 'chmod 400 aws.pem && terraform init && terraform validate'
+      }
+    }
+    stage('Run the Terraform build') {
+      steps {
+	catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+          sh 'terraform plan && terraform apply -auto-approve'
+	}
+      }
+    }
+    stage('Upload the new Terraform state') {
+      steps {
+        sh '/var/lib/jenkins/Scripts/upload-Aws-tfstate.sh'
+      }
+    }
+  }
+}
