@@ -24,15 +24,10 @@ pipeline {
         sh 'terraform init && terraform validate'
       }
     }
-    stage('Set AWS Credentials') {
-      steps {
-        sh '. /var/lib/jenkins/Scripts/set-Aws-creds.sh'
-      }
-    }
     stage('Run the Terraform build') {
       steps {
 	catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-          sh 'terraform plan && terraform apply -auto-approve'
+          sh '. /var/lib/jenkins/Scripts/set-Aws-creds.sh && terraform plan && terraform apply -auto-approve'
 	}
       }
     }
