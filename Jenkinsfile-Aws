@@ -27,7 +27,7 @@ pipeline {
     stage('Run the Terraform build') {
       steps {
 	catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-          sh '. /var/lib/jenkins/Scripts/set-Aws-creds.sh && terraform plan && terraform apply -auto-approve'
+          sh '. /var/lib/jenkins/Scripts/set-Aws-env && terraform plan -var-file="$AWS_TFVARS" && terraform apply -var-file="$AWS_TFVARS" -auto-approve'
 	}
       }
     }
