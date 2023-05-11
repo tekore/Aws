@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Download the current Terraform state') {
       steps {
-        sh '/var/lib/jenkins/Scripts/get-Aws-tfstate.sh'
+        sh '/Hub/Scripts/get-Aws-tfstate.sh'
       }
     }
     stage('Validate the Terraform code') {
@@ -27,13 +27,13 @@ pipeline {
     stage('Run the Terraform build') {
       steps {
 	catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-          sh '. /var/lib/jenkins/Scripts/set-Aws-env && terraform plan -var-file="$AWS_TFVARS" && terraform apply -var-file="$AWS_TFVARS" -auto-approve'
+          sh '. /Hub/Scripts/set-Aws-env && terraform plan -var-file="$AWS_TFVARS" && terraform apply -var-file="$AWS_TFVARS" -auto-approve'
 	}
       }
     }
     stage('Upload the new Terraform state') {
       steps {
-        sh '/var/lib/jenkins/Scripts/upload-Aws-tfstate.sh'
+        sh '/Hub/Scripts/upload-Aws-tfstate.sh'
       }
     }
   }
